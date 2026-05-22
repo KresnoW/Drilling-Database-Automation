@@ -1,98 +1,53 @@
 # Drilling Database Automation
 
-Automated mining drilling database and PDF reporting pipeline built with Python.
+A Python pipeline that automates coal drilling data processing and generates professional daily PDF reports.
 
-## Overview
+## What It Does
 
-This project automates geological drilling data processing and generates operational drilling reports in PDF format.
-
-The workflow includes:
-- raw drilling database cleaning
-- coal seam thickness calculations
-- coal quality ranking
-- lithology distribution analysis
-- rig productivity summaries
-- automated chart generation
-- PDF operational reporting
-
----
-
-## Features
-
-- Automated drilling data processing
-- Coal seam thickness analytics
-- CVAR quality ranking
-- Lithology percentage summaries
-- Rig drilling performance tracking
-- Automated visualization generation
-- PDF report automation
-
----
-
-## Workflow
-
-```text
-Raw CSV Files
-      ↓
-main.py
-      ↓
-coal_summary.py
-      ↓
-coal_rank.py
-      ↓
-lith_summary.py
-      ↓
-rig_drilled.py
-      ↓
-daily_report.py
-      ↓
-Final PDF Report
-```
-
----
+1. **Ingests** raw drilling data (CSV/Excel)
+2. **Cleans** duplicates and converts data types
+3. **Analyzes** coal seam thickness, quality (CVAR, TM, TS, ASH), and lithology distribution
+4. **Ranks** rigs by performance (depth drilled, intervals completed)
+5. **Generates** a 7-page PDF report with tables and charts
 
 ## Tech Stack
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- ReportLab
-- OpenPyXL
+- Python 3.11+
+- pandas (data processing)
+- matplotlib (charts)
+- reportlab (PDF generation)
+- openpyxl (Excel I/O)
 
----
-
-## Sample Outputs
-
-### Rig Performance Dashboard
-[INSERT IMAGE]
-
-### Lithology Distribution
-[INSERT IMAGE]
-
-### Automated PDF Report
-[INSERT IMAGE]
-
----
-
-## Installation
+## Quick Start
 
 ```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
----
-
-## Run Full Automation
-
-```bash
+# Run full pipeline
 python run_all.py
-```
 
----
+| Script            | Purpose                             |
+| ----------------- | ----------------------------------- |
+| `main.py`         | Build master database from raw data |
+| `coal_summary.py` | Calculate seam thicknesses          |
+| `coal_rank.py`    | Rank seams by quality (CVAR)        |
+| `lith_summary.py` | Analyze lithology distribution      |
+| `rig_drilled.py`  | Summarize rig performance           |
+| `daily_report.py` | Generate PDF report                 |
 
-## Author
+Drilling-Database-Automation/
+|-- data/                    # Raw drilling data
+|-- output/                  # Generated reports & Excel files
+|-- main.py                  # Data ingestion
+|-- coal_summary.py          # Seam thickness
+|-- coal_rank.py             # Quality ranking
+|-- lith_summary.py          # Lithology analysis
+|-- rig_drilled.py           # Rig metrics
+|-- daily_report.py          # PDF generator
+|-- run_all.py               # Pipeline orchestrator
+|-- requirements.txt         # Dependencies
+|-- README.md                # This file
 
-Nur Kresno Wicaksono
-
-Mining Data Analyst | Geologist | Reporting Automation
+By Nur Kresno Wicaksono
+Geologist | HSE | Mining Data Analyst | AI Assisted
