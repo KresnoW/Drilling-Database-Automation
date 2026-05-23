@@ -1,0 +1,5 @@
+How to refresh Repo folder on git hub via VScode
+
+& "C:\Program Files\Git\cmd\git.exe" add index.html
+& "C:\Program Files\Git\cmd\git.exe" commit -m "Add portfolio website with dashboard"
+& "C:\Program Files\Git\cmd\git.exe" push origin main
